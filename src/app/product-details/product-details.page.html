@@ -1,0 +1,26 @@
+<ion-header class="bar bar-header bar-dark">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      {{product.Name}}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <img src="{{product.ImageUrl}}" />
+  <div class="details-wrapper">
+    <h2 class="title">
+      <span class="textShadow">{{product.Name}}</span>
+      <span class="oldPrice"
+        *ngIf="(product.DiscountedPrice && product.DiscountedPrice != product.Price && product.DiscountedPrice < product.Price)">{{product.Price}}₺</span>
+      <span class="newPrice"
+        *ngIf="(product.DiscountedPrice && product.DiscountedPrice != product.Price && product.DiscountedPrice < product.Price)">{{product.DiscountedPrice}}₺</span>
+      <span class="newPrice"
+        *ngIf="!(product.DiscountedPrice && product.DiscountedPrice != product.Price && product.DiscountedPrice < product.Price)">{{product.Price}}₺</span>
+    </h2>
+    <p class="desc">{{product.Description}}</p>
+  </div>
+</ion-content>

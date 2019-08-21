@@ -1,0 +1,30 @@
+<ion-header class="bar bar-header bar-dark">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      {{categoryName}}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let product of this.products" (click)="openProduct(product)">
+    <img src="{{product.ImageUrl}}" />
+    <ion-card-content>
+      <ion-card-title>
+        <span class="textShadow">{{product.Name}}</span>
+        <span class="oldPrice"
+          *ngIf="(product.DiscountedPrice && product.DiscountedPrice != product.Price && product.DiscountedPrice < product.Price)">{{product.Price}}₺</span>
+        <span class="newPrice"
+          *ngIf="(product.DiscountedPrice && product.DiscountedPrice != product.Price && product.DiscountedPrice < product.Price)">{{product.DiscountedPrice}}₺</span>
+        <span class="newPrice"
+          *ngIf="!(product.DiscountedPrice && product.DiscountedPrice != product.Price && product.DiscountedPrice < product.Price)">{{product.Price}}₺</span>
+      </ion-card-title>
+      <p class="desc">
+        {{product.Description.substring(0, 250)}}...
+      </p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

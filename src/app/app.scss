@@ -4,3 +4,86 @@
 // styles are for the entire app and not just one component. Additionally, this 
 // file can hold Sass mixins, functions, and placeholder classes to be imported 
 // and used throughout the application.
+@import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap&subset=latin-ext');
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap&subset=latin-ext');
+ion-card-title{
+    font-family: 'Pacifico', cursive;
+    margin-bottom: 10px;
+}
+.details-wrapper{
+    padding: 0 20px;
+}
+.title {
+    font-family: 'Pacifico', cursive;
+    font-size: 2.0em;
+}
+.textShadow{
+  text-shadow: 3px 3px #ccc;
+}
+ion-title{
+  font-family: 'Pacifico', cursive;
+}
+.card-background-page {
+
+  ion-card {
+    position: relative;
+    text-align: center;
+  }
+
+  .card-title {
+    font-family: 'Pacifico', cursive;
+    position: absolute;
+    top: 36%;
+    font-size: 2.0em;
+    width: 100%;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 15px;
+  }
+
+  .card-subtitle {
+    font-family: 'Pacifico', cursive;
+    font-size: 1.5em;
+    position: absolute;
+    top: 52%;
+    width: 100%;
+    color: #fff;
+  }
+
+}
+.desc{
+    font-family: 'Raleway', sans-serif;
+}
+.oldPrice{
+    text-decoration: line-through;
+    color: gray;
+    margin-left: 10px;
+}
+.newPrice{
+    color: #d91f6a;
+    margin-left: 10px;
+}
+.placeholder {
+    background-color: #ccc;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  
+  .placeholder img {
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: opacity 1s linear;
+  }
+  
+  .placeholder img.loaded {
+    opacity: 1;
+  }
+  
+  .img-small {
+    filter: blur(50px);
+    /* this is needed so Safari keeps sharp edges */
+    transform: scale(1);
+  }
